@@ -33,6 +33,6 @@ a{
 .item:hover{
     color: purple;
     cursor: pointer;
-    background-color: green !important;
+    background-color: green;
 
 }

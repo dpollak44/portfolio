@@ -33,32 +33,9 @@ h2{
     background-color: rgb(164, 206, 167);
 }
 
-/* .aisleDiv a:hover {
 
-cursor: pointer;
-
-    }  */
-
-/* .aisleDiv a:link{
-color: black;
-text-decoration: none;
-} */
-
- /* a:link{
-    color: black;
-    text-decoration: none;
-    }
-
-a:visited{
-    color: green;
-    text-decoration: none;
-    }
-*/
      .aisleDiv a:hover {
-
         color: green !important;
-        /* cursor: pointer; */
-
         } 
 
 
