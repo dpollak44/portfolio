@@ -1,0 +1,45 @@
+body{
+
+text-align: center;
+}
+
+.flex-container {
+  /* margin-top: 5rem;
+  padding-top: 3rem;
+  padding-bottom: 3rem; */
+    display: flex;
+    /* background-color: lightgreen; */
+  }
+
+  /* *{transition:all 0.3s ease-in-out;} */
+
+  .container{
+    /* clear:both; */
+    overflow:auto;
+  }
+  
+  #nav{float:right;
+
+  }
+  
+  #logo h1{float:left;
+    padding-left: 1rem;}
+  
+  #nav li{
+    display: inline-block;
+     padding:10px;
+    font-size:20px;
+    color: red;
+     /* font-family:raleway; */
+  }
+
+  #nav link{
+
+    color: rgb(0, 255, 102);
+
+  }
+  
+  li:hover{
+    color:orange;
+    
+  }

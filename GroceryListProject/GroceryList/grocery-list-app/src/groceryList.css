@@ -1,0 +1,12 @@
+#list{
+    width:15%;
+    text-align: center;
+    font-size: medium;
+
+}
+
+#list ul li{
+    list-style: none;
+    font-weight: bold;
+}
+

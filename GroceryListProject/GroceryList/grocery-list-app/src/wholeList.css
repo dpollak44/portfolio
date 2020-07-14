@@ -1,0 +1,22 @@
+.listDiv{
+
+    margin: 2em;
+    /* border-right: 3px solid black; */
+    padding: 1em;
+
+}
+
+.listDiv ul li{
+    list-style: none;
+}
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  #wholeListDiv{
+      text-align: center;
+  }
+
+  

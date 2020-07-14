@@ -1,0 +1,24 @@
+/* #wrapper{
+    text-align: center;
+} */
+
+#addItemDiv{
+margin: auto;
+width: 50%;
+text-align: center;
+/* display: inline-block; */
+    /* background-color: gray;
+
+    border: 3px solid blue; */
+}
+
+
+#addAisleDiv{
+    margin: auto;
+    width: 50%;
+    text-align: center;
+    /* display: inline-block; */
+        /* background-color: gray;
+    
+        border: 3px solid blue; */
+    }
