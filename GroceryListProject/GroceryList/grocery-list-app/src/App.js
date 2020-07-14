@@ -1,28 +1,20 @@
 import React, { Component } from 'react';
+import { NavLink, Route, Switch } from 'react-router-dom';
 import GroceryAisles from './groceryAisles.js';
 import './App.css';
 import Aisle from './aisle.js';
-
-
 import Add from './add';
 import DeleteAisle from './deleteAisle';
 import DeleteItem from './deleteItem';
-import { NavLink, Route, Switch } from 'react-router-dom';
 import WholeList from './wholeList.js';
 import PersonalLists from './personalLists';
-
-
-
 
 
 export default class App extends Component {
   state = {
     items: null,
     aisles: [],
-    selectedItems: [],
-    aislesColors: [],
-
-
+    selectedItems: []
   };
 
   componentDidMount() {
@@ -70,9 +62,6 @@ export default class App extends Component {
   }
 
 
-
-
-
   handleAisleSelected = aisle => {
     this.setState({
       selectedAisle: aisle,
@@ -81,9 +70,6 @@ export default class App extends Component {
   }
 
   handleItemSelected = item => {
-
-    console.log('item.count', item.count);
-
     if (item.count) {
       item.count++
     }
@@ -91,12 +77,9 @@ export default class App extends Component {
       item.count = 1;
     }
 
-
     this.setState({
-      selectedItems: [...this.state.selectedItems, item]
+      selectedItems: this.state.selectedItems.findIndex(arrayItem => arrayItem.name === item.name) === -1 ? [...this.state.selectedItems, item] : [...this.state.selectedItems]
     });
-    console.log('grocerylist', this.state.selectedItems);
-
   };
 
 
@@ -113,12 +96,9 @@ export default class App extends Component {
   }
 
   handleDeleteAisle = id => {
-    console.log('id', id)
     this.setState({
       aisles: this.state.aisles.filter(aisle => aisle.id !== +id)
     })
-
-
   }
 
   handleDeleteItem = id => {
@@ -171,8 +151,8 @@ export default class App extends Component {
           </div>
         </div>
         <hr />
-        <div className="flex-container">
 
+        <div className="flex-container">
 
           <Switch>
             <Route path="/" exact render={(routeProps) => (<GroceryAisles {...routeProps} aisles={aisles} onAisleSelected={this.handleAisleSelected} /*aislesColors={aislesColors}*/ />)} />

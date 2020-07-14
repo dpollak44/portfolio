@@ -9,30 +9,8 @@ export default class Aisle extends Component {
         selectedItems: []
     }
 
-    // componentDidMount() {
-    //     fetch(`http://localhost:3000/food/aisles/${this.props.match.params.aisle}`)
-    //         .then(response => {
-    //             if (!response.ok) {
-    //                 throw new Error('Failed to load');
-    //             }
-    //             return response.json();
-    //         })
-    //         .then(aisle => {
-    //             this.setState({
-    //                 aisleId: aisle[0].id,
-    //                 aisleName: aisle[0].name
-    //             });
-    //         })
-    //         .catch(err => {
-    //             console.error(err);
-    //             this.setState({
-    //                 error: err.message ? err.message : 'Failed to load'
-    //             });
-    //         });
-    // }
-
     render() {
-        const { items, aisle } = this.props;
+        const { items, aisle, selectedItems } = this.props;
 
         let theItems;
 
@@ -63,7 +41,7 @@ export default class Aisle extends Component {
 
                     </div>
                 </div>
-                {aisle && <GroceryList aisle={aisle.id} items={this.props.selectedItems} />}
+                {aisle && <GroceryList aisle={aisle} items={selectedItems} />}
             </>
         );
     }

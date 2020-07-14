@@ -22,3 +22,10 @@ text-align: center;
     
         border: 3px solid blue; */
     }
+
+    input{
+        width: 60rem;
+        height: 3rem;
+        border-color: light-grey;
+        margin-bottom: .5rem;
+    }
