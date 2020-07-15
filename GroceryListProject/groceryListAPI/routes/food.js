@@ -7,12 +7,10 @@ router.route('/items')
     .get((req, res, next) => {
         db.query('SELECT * FROM groceries', (error, results, fields) => {
             if (error) return next(new Error(`Unable to fetch contacts ${error.message}`));
-            console.log(results);
             res.send(results);
         });
     })
     .post((req, res, next) => {
-        console.log(req.body.name, req.body.aisle)
         db.query(`INSERT INTO groceries(name,aisle_num)
                           VALUES(?,?)`,
             [req.body.name, req.body.aisle],
@@ -32,7 +30,6 @@ router.route('/items')
 
 router.route('/items/:id')
     .get((req, res, next) => {
-        console.log(req.params.id)
         db.query('SELECT * FROM groceries WHERE aisle_num = ?',
             [req.params.id],
             (error, result, fields) => {
@@ -56,7 +53,6 @@ router.route('/items/:id')
         );
     })
     .delete((req, res, next) => {
-        console.log(req.params.id)
         db.query(`DELETE FROM groceries WHERE id = ?`,
             [req.params.id],
             (error, result) => {
@@ -92,7 +88,6 @@ router.route('/aisles')
             });
     })
     .delete((req, res, next) => {
-        console.log(req.body.aisle)
         db.query(`DELETE FROM aisles WHERE id = ?`,
             [req.body.aisle],
             (error, result) => {
@@ -105,7 +100,6 @@ router.route('/aisles')
 
 router.route('/aisles/:id')
     .get((req, res, next) => {
-        console.log(req.params.id)
         db.query('SELECT * FROM aisles WHERE id = ?',
             [req.params.id],
             (error, result, fields) => {
